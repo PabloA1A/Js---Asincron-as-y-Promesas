@@ -23,11 +23,21 @@ const todos = {
     ]
 };
 
+
 localStorage.setItem('todos', JSON.stringify(todos));
 
 const storedTodos = localStorage.getItem('todos');
 const parsedTodos = JSON.parse(storedTodos);
+const tableBody = document.getElementById("tableBody");
 
-parsedTodos.results.forEach(todo => {
-    console.log(todo.title);
-});
+const tableRows = parsedTodos.results.map(todo => {
+    return `
+        <tr>
+            <td>${todo.title}</td>
+            <td>${todo.priority}</td>
+            <td>${todo.isDone ? 'Yes' : 'No'}</td>
+        </tr>
+    `;
+}).join('');
+
+tableBody.innerHTML = tableRows;
