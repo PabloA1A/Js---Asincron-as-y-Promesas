@@ -1,0 +1,20 @@
+{
+  "name": "asincronias",
+  "version": "1.0.0",
+  "description": "JS asincronias y promesas",
+  "main": "app.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PabloA1A/Js---Asincron-as-y-Promesas.git"
+  },
+  "author": "Pablo Abad",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PabloA1A/Js---Asincron-as-y-Promesas/issues"
+  },
+  "homepage": "https://github.com/PabloA1A/Js---Asincron-as-y-Promesas#readme"
+}

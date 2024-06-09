@@ -1,3 +1,8 @@
+# Installation
+````
+npm install
+````
+
 # Js - Asynchronies and Promises
 
 ## 1.- Use this JSON to print in the browser console the list of titles of the 'All'.
