@@ -1,43 +1,18 @@
-const todos = {
-    "results": [
-        {
-            "title": "Estudiar Js",
-            "priority": "alta",
-            "isDone": false
-        },
-        {
-            "title": "Estudiar CSS",
-            "priority": "alta",
-            "isDone": true
-        },
-        {
-            "title": "Estudiar OOP",
-            "priority": "media",
-            "isDone": false
-        },
-        {
-            "title": "Estudiar IA",
-            "priority": "baja",
-            "isDone": false
+const jsonFilePath = 'data.json';
+
+async function getData() {
+    try {
+        const response = await fetch(jsonFilePath);
+        if (!response.ok) {
+            throw new Error('Was not ok ' + response.statusText);
         }
-    ]
-};
+        const data = await response.json()
+        data.results.forEach(result => {
+            console.log(result.title);
+        });
+    } catch (error) {
+        console.error('There has been a problem:', error);
+    }
+}
 
-
-localStorage.setItem('todos', JSON.stringify(todos));
-
-const storedTodos = localStorage.getItem('todos');
-const parsedTodos = JSON.parse(storedTodos);
-const tableBody = document.getElementById("tableBody");
-
-const tableRows = parsedTodos.results.map(todo => {
-    return `
-        <tr>
-            <td>${todo.title}</td>
-            <td>${todo.priority}</td>
-            <td>${todo.isDone ? 'Yes' : 'No'}</td>
-        </tr>
-    `;
-}).join('');
-
-tableBody.innerHTML = tableRows;
+getData();
