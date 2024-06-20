@@ -1,14 +1,21 @@
-table {
+.table {
+    display: table;
     width: 100%;
     border-collapse: collapse;
-    background-color: rgb(51, 112, 53);
 }
-th, td {
-    border: 1px solid #ddd;
-    padding: 8px;
+
+.row {
+    display: table-row;
 }
-th {
-    background-color: #f2f2f2;
+
+.cell {
+    display: table-cell;
+    border: 1px solid rgb(91, 142, 52);
+    padding: 10px;
     text-align: left;
-    background-color: rgb(209, 139, 49);
+}
+
+.header {
+    display: table-header-group;
+    background-color: #5b6f39;
 }
